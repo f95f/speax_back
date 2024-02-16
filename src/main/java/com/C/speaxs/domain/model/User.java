@@ -47,13 +47,17 @@ public class User {
     @Size(max = 512)
     private String bio;
 
-    private boolean status;
+    private boolean isActive;
 
     @NotNull
     private Date birthDate;
 
+    private Location birthLocation;
+    private Location currentLocation;
+
     private Date createdAt;
     private Date updatedAt;
 
-
+    //TODO: set createdAt automatically
+    //TODO: set isActive to false by default
 }
