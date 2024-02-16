@@ -1,9 +1,7 @@
 package com.C.speaxs.domain.model;
 
-import jakarta.persistence.Entity;
-import jakarta.persistence.GeneratedValue;
-import jakarta.persistence.GenerationType;
-import jakarta.persistence.Id;
+import com.C.speaxs.domain.model.enums.UserRole;
+import jakarta.persistence.*;
 import jakarta.validation.constraints.Email;
 import jakarta.validation.constraints.NotBlank;
 import jakarta.validation.constraints.NotNull;
@@ -55,9 +53,13 @@ public class User {
     private Location birthLocation;
     private Location currentLocation;
 
+    @Enumerated(EnumType.STRING)
+    private UserRole role;
+
     private Date createdAt;
     private Date updatedAt;
 
     //TODO: set createdAt automatically
     //TODO: set isActive to false by default
+    //TODO: set user role as user by default
 }
