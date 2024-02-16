@@ -19,7 +19,7 @@ import java.util.UUID;
 public class User {
 
     @Id
-    @GeneratedValue(strategy = GenerationType.IDENTITY)
+    @GeneratedValue(strategy = GenerationType.UUID)
     @EqualsAndHashCode.Include
     private UUID id;
 
@@ -50,7 +50,10 @@ public class User {
     @NotNull
     private Date birthDate;
 
+    @ManyToOne
     private Location birthLocation;
+
+    @ManyToOne
     private Location currentLocation;
 
     @Enumerated(EnumType.STRING)

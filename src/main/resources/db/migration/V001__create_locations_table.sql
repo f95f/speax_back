@@ -1,5 +1,7 @@
 create table location(
-	id int not null auto_increment primary key,
+	id BINARY(16) not null,
     country varchar(128) not null,
-    city varchar(256)
+    city varchar(256),
+
+    primary key(id)
 );

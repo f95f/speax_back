@@ -1,5 +1,5 @@
-create table users(
-	id int not null auto_increment primary key,
+create table user(
+	id BINARY(16) not null,
     firstName varchar(128) not null,
     lastName varchar(128) not null,
     email varchar(128) not null,
@@ -8,13 +8,15 @@ create table users(
     bio varchar(512),
     birthDate date not null,
     isActive boolean,
-    birthLocation_id int,
-    currentLocation_id int,
+    birthLocation_id BINARY(16),
+    currentLocation_id BINARY(16),
     userRole varchar(32),
 	createdAt date,
-    updatedAt date
+    updatedAt date,
+
+    primary key(id)
 );
-alter table users
+alter table user
 	add constraint uk_email unique(email),
     add constraint uk_phone unique(phone),
     add constraint fk_birthLocation
