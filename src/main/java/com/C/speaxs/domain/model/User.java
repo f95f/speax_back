@@ -48,6 +48,7 @@ public class User {
     private boolean isActive;
 
     @NotNull
+    @Column(name = "birthDate")
     private Date birthDate;
 
     @ManyToOne
@@ -56,8 +57,8 @@ public class User {
     @ManyToOne
     private Location currentLocation;
 
-    @Enumerated(EnumType.STRING)
-    private UserRole role;
+    //@Enumerated(EnumType.STRING)
+//    private UserRole role;
 
     private Date createdAt;
     private Date updatedAt;
