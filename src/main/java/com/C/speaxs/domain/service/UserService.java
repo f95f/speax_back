@@ -2,6 +2,7 @@ package com.C.speaxs.domain.service;
 
 import com.C.speaxs.domain.model.Location;
 import com.C.speaxs.domain.model.User;
+import com.C.speaxs.domain.repository.LanguageRepository;
 import com.C.speaxs.domain.repository.LocationRepository;
 import com.C.speaxs.domain.repository.UserRepository;
 import lombok.AllArgsConstructor;
@@ -19,6 +20,8 @@ public class UserService {
 
     private final UserRepository repository;
     private final LocationRepository locationRepository;
+    private final LanguageRepository languageRepository;
+
     @Transactional
     public User saveUser(User user){
 

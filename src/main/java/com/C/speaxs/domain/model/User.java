@@ -8,8 +8,8 @@ import jakarta.validation.constraints.NotNull;
 import jakarta.validation.constraints.Size;
 import lombok.*;
 
-import java.util.Date;
-import java.util.UUID;
+import java.util.*;
+
 @Getter
 @Setter
 @AllArgsConstructor
@@ -56,6 +56,15 @@ public class User {
 
     @ManyToOne
     private Location currentLocation;
+
+    @NotNull
+    @ManyToMany
+    @JoinTable(
+            name = "user_proficiencies",
+            joinColumns = @JoinColumn(name = "user_id"),
+            inverseJoinColumns = @JoinColumn(name = "proficiency_id")
+    )
+    private Set<Proficiency> proficiencies = new HashSet<>();
 
     //@Enumerated(EnumType.STRING)
 //    private UserRole role;
